@@ -1,6 +1,7 @@
 package com.Java.DCB.service;
 
 import com.Java.DCB.entity.Department;
+import com.Java.DCB.error.DepartmentNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public interface DepartmentService {
 
     public List<Department> getAllDepartments();
 
-    public Department getDepartmentById(Long id);
+    public Department getDepartmentById(Long id) throws DepartmentNotFoundException;
 
     public void deleteDepartmentById(Long id);
 

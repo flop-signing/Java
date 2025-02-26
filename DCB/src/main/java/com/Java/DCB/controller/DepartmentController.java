@@ -2,6 +2,7 @@ package com.Java.DCB.controller;
 
 
 import com.Java.DCB.entity.Department;
+import com.Java.DCB.error.DepartmentNotFoundException;
 import com.Java.DCB.service.DepartmentService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -36,7 +37,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/departments/{id}")
-    public Department getDepartmentById(@PathVariable("id") Long id) {
+    public Department getDepartmentById(@PathVariable("id") Long id) throws DepartmentNotFoundException {
 
         return departmentService.getDepartmentById(id);
     }

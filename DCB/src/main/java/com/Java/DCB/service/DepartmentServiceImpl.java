@@ -2,11 +2,13 @@ package com.Java.DCB.service;
 
 
 import com.Java.DCB.entity.Department;
+import com.Java.DCB.error.DepartmentNotFoundException;
 import com.Java.DCB.repository.DepartmentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 
 @Service
@@ -29,8 +31,16 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Department getDepartmentById(Long id) {
-        return departmentRepository.findById(id).get();
+    public Department getDepartmentById(Long id) throws DepartmentNotFoundException {
+        Optional<Department>  department = departmentRepository.findById(id);
+
+        if(!department.isPresent())
+        {
+            throw new DepartmentNotFoundException("Department not available.");
+        }
+
+        return department.get();
+
     }
 
     @Override
