@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/dcbapp?allowPublicKeyRetrieval=true&useSSL=false
+    password: 'yes'
+  application:
+    name: DCB
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: 'true'
+welcome:
+  message: '"Hello from the application.properties"'
+server:
+  port: '8383'
