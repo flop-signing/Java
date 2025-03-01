@@ -32,7 +32,7 @@ class DepartmentServiceTest {
     void setUp() {
 
         Department department = Department
-                .builder().departmentName("MSE")
+                .builder().departmentName("CSE")
                 .departmentAddress("Chittagong")
                 .departmentCode("CSE")
                 .departmentId(1L)
