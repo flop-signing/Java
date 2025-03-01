@@ -11,6 +11,6 @@ spring:
       ddl-auto: create
     show-sql: 'true'
 welcome:
-  message: '"Hello from the application.properties"'
+  message: '"Hello from the application.properties file"'
 server:
   port: '8383'
