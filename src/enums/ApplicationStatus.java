@@ -3,7 +3,7 @@ package enums;
 public class ApplicationStatus {
 
     public static void main(String[] args) {
-        Status status = Status.Success;
+       /* Status status = Status.Success;
         System.out.println(status.ordinal());
 
         // Test with if else
@@ -33,5 +33,10 @@ public class ApplicationStatus {
             default:
                 System.out.println("Unknown");
         }
+
+    }}*/
+
+        Laptop laptop=Laptop.Mackbok;
+        System.out.println(laptop+" : "+laptop.getPrice());
     }
 }
