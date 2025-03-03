@@ -34,4 +34,10 @@ public class Main {
 
     //FunctionalInterface fhs = i-> System.out.println("Hello World");
 
+    // If the function have return type then
+    //FunctionalInterface fhs = i-> i; // don't need to write return type
+
+
+
+
 }
