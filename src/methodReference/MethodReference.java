@@ -19,6 +19,8 @@ public class MethodReference {
                 .toList();
 
 //        System.out.println(unames);
-        unames.forEach(System.out::println);
+
+
+        unames.forEach(System.out::println); //println belongs System.out class
     }
 }
