@@ -5,8 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Getter
-@Setter
+@Data
 //@Data it's adding all getter,setter, toString(), HashCode
 @AllArgsConstructor
 @NoArgsConstructor
@@ -52,11 +51,6 @@ public class Student {
 
     @Embedded
     private Guardian guardian;
-
-
-
-
-
 
 
 }

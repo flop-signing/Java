@@ -22,7 +22,7 @@ class StudentRepositoryTest {
     @Test
     public void savedStudent() {
         Student student = Student.builder()
-                .email("mehedy@gmail.com")
+                .email("mehedy1804106@gmail.com")
                 .firstName("Mehedi")
                 .lastName("Hassan")
                 //.gurdianName("Meherun")
@@ -34,32 +34,114 @@ class StudentRepositoryTest {
         studentRepository.save(student);
     }
 
+
+    // print all students
+
+    @Test
+    public void printAllStudents() {
+        List<Student> students = studentRepository.findAll();
+        System.out.println(students);
+    }
+
     // save student with guardian
 
     @Test
     public void saveStudentWithGuardianDetails(){
 
         Guardian guardian=Guardian.builder()
-                .email("meherun234@gmail.com")
-                .mobile("01706548524")
-                .name("Meherun")
+                .email("mortoza234@gmail.com")
+                .mobile("01718228835")
+                .name("Mortoza234")
                 .build();
 
 
         Student student=Student.builder()
-                .firstName("Mehedi")
-                .lastName("Hassan")
-                .email("mehedy123@gmail.com")
+                .firstName("Maruf")
+                .lastName("Hossan")
+                .email("maruf@gmail.com")
                 .guardian(guardian)
                 .build();
 
         studentRepository.save(student);
     }
+//
+//    @Test
+//    public void getAllStudents() {
+//        List<Student> students = studentRepository.findAll();
+//        System.out.println(students);
+//    }
+
+
 
     @Test
-    public void getAllStudents() {
-        List<Student> students = studentRepository.findAll();
-        System.out.println(students);
+    public void getStudentByFirstName() {
+        List<Student> students = studentRepository.findByFirstName("Mehedi");
+
+        System.out.println("Students" +students);
     }
+
+
+
+    @Test
+    public void getStudentByFirstNameContaining() {
+        List<Student> students = studentRepository.findByFirstNameContaining("hed");
+
+        System.out.println("Students" +students);
+    }
+
+    @Test
+    public void printStudentBasedOnGuardianName() {
+        List<Student> students = studentRepository.findByGuardianName("Mehedi");
+        System.out.println("Students" +students);
+    }
+
+//    @Test
+//    public void getStudentByEmailAddress() {
+//        Student student=studentRepository.getStudentByEmailAddress("mehedy@gmail.com");
+//
+//        System.out.println("Student "+student);
+//    }
+//
+//
+//    @Test
+//    public void getStudentFirstNameByEmailAddress(){
+//
+//        String firstName=studentRepository.getStudentFirstNameByEmailAddress("mehedy@gmail.com");
+//
+//        System.out.println("First Name is: "+firstName );
+//
+//    }
+
+
+/*
+ @Test
+    public void getStudentByEmailAddressNative()
+    {
+        Student student=studentRepository.getStudentByEmailAddressNative("mehedy@gmail.com");
+
+        System.out.println("Student "+student);
+    }
+*/
+
+
+
+    // Advanced Native through parameter
+
+   /* @Test
+    public void getStudentByEmailAddressNativeNamedParam()
+    {
+        Student student=studentRepository.getStudentByEmailAddressNativeNamedParam("mehedy@gmail.com");
+
+        System.out.println("Student "+student);
+    }*/
+
+
+
+/*  @Test
+    public void updateStudentByEmailIdTest(){
+        studentRepository.updateStudentNameByEmailId("Mehedi","mehedy1804106@gmail.com");
+    }*/
+
+
 
 }
