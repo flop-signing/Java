@@ -4,6 +4,8 @@ package com.java.SpringDataJPA.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Data
 //@Data it's adding all getter,setter, toString(), HashCode
@@ -52,5 +54,8 @@ public class Student {
     @Embedded
     private Guardian guardian;
 
+
+    @ManyToMany(mappedBy = "students")  // Reference back to Course
+    private List<Course> courses;
 
 }
