@@ -21,13 +21,13 @@ class CourseMaterialRepositoryTest {
 
         Course course=
                 Course.builder()
-                        .courseTitle("Introduction to Java")
+                        .courseTitle("C#")
                         .credit(5)
                         .build();
 
         CourseMaterial courseMaterial=CourseMaterial
                 .builder()
-                .url("https://www.google.com")
+                .url("https://www.leetcode.com")
                 .course(course)
                 .build();
         courseMaterialRepository.save(courseMaterial);
