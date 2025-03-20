@@ -113,27 +113,25 @@ class StudentRepositoryTest {
     }
 
 
-/*
  @Test
     public void getStudentByEmailAddressNative()
     {
-        Student student=studentRepository.getStudentByEmailAddressNative("mehedy@gmail.com");
+        Student student=studentRepository.getStudentByEmailAddressNative("mehedy18@gmail.com");
 
         System.out.println("Student "+student);
     }
-*/
 
 
 
     // Advanced Native through parameter
 
-   /* @Test
+    @Test
     public void getStudentByEmailAddressNativeNamedParam()
     {
-        Student student=studentRepository.getStudentByEmailAddressNativeNamedParam("mehedy@gmail.com");
+        Student student=studentRepository.getStudentByEmailAddressNativeNamedParam("mehedy12@gmail.com");
 
         System.out.println("Student "+student);
-    }*/
+    }
 
 
 

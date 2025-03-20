@@ -47,20 +47,21 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     //
 
-/*    @Query(
-                value = "SELECT * FROM t_students where s.email_address = ?1",
+    @Query(
+            value = "SELECT * FROM t_students s WHERE s.email_address = ?1",
             nativeQuery = true
     )
-    Student getStudentByEmailAddressNative(String email);*/
+    Student getStudentByEmailAddressNative(String email);
+
 
 
     // Through Parameter
-//
-//    @Query(
-//            value = "SELECT * FROM t_students where s.email_address = :email",
-//            nativeQuery = true
-//    )
-//    public Student getStudentByEmailAddressNativeNamedParam(@Param("email") String email);
+
+    @Query(
+            value = "SELECT * FROM t_students s Where s.email_address = :email",
+            nativeQuery = true
+    )
+    public Student getStudentByEmailAddressNativeNamedParam(@Param("email") String email);
 
 
 //    @Transactional
