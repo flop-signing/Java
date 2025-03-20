@@ -36,7 +36,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
 
     // Get the first name of the student
-
+    // JPQL
     @Query("select s.firstName from Student s where s.email = ?1")
     public String getStudentFirstNameByEmailAddress(String email);
 
