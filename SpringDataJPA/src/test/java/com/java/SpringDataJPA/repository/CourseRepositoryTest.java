@@ -5,7 +5,13 @@ import com.java.SpringDataJPA.entity.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
+
+import javax.swing.border.TitledBorder;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,18 +25,69 @@ class CourseRepositoryTest {
     public void savedCourseWithTeacher() {
 
         Teacher teacher= Teacher.builder()
-                .firstName("Nazmul")
-                .lastName("Mely")
+                .firstName("Bonjur")
+                .lastName("Sely")
                 .build();
 
         Course course=Course
                 .builder()
-                .courseTitle("Golang")
+                .courseTitle("PHP")
                 .teacher(teacher)
-                .credit(7)
+                .credit(4)
                 .build();
 
         courseRepository.save(course);
+
+    }
+
+    @Test
+    public void findAllPagination()
+    {
+
+        Pageable firstPageWithThreeRecords= PageRequest.of(0, 3);
+
+        Pageable secondPageWithTwoRecords= PageRequest.of(1, 2);
+
+
+        List<Course> courses= courseRepository.findAll(firstPageWithThreeRecords).getContent();
+
+
+        long totalElements=courseRepository.findAll(firstPageWithThreeRecords).getTotalElements();
+
+        int totalPages=  courseRepository.findAll(firstPageWithThreeRecords).getTotalPages();
+
+        System.out.println("Total Pages"+ totalPages);
+        System.out.println("Total Elements"+ totalElements);
+        System.out.println("The list of Courses"+courses);
+    }
+
+
+    @Test
+    public void findAllSorting()
+    {
+        Pageable sortByTitle= PageRequest.of(0, 2, Sort.by("courseTitle"));
+
+
+        Pageable sortByCreditDesc= PageRequest.of(0, 2, Sort.by("credit").descending());
+
+        Pageable sortByTitleAndCreditDesc= PageRequest.of(0, 2, Sort.by("courseTitle").descending().and(Sort.by("credit")));
+
+
+        List<Course> courses= courseRepository.findAll(sortByTitle).getContent();
+
+        System.out.println("Courses"+courses);
+
+
+
+    }
+
+    @Test
+    public void findByCourseTitle(){
+
+        Pageable firstPageTenRecords= PageRequest.of(0, 10);
+        List<Course> courses= courseRepository.findByCourseTitle("D",firstPageTenRecords).getContent();
+
+        System.out.println("Courses"+courses);
 
     }
 

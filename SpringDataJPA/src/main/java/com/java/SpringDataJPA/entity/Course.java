@@ -28,7 +28,7 @@ public class Course {
     private CourseMaterial courseMaterial;
 
     @ManyToOne(
-            fetch = FetchType.LAZY,
+            fetch = FetchType.EAGER,
             cascade = CascadeType.ALL
     )
     @JoinColumn(
