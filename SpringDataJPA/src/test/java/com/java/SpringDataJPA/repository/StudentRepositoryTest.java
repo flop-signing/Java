@@ -95,22 +95,22 @@ class StudentRepositoryTest {
         System.out.println("Students" +students);
     }
 
-//    @Test
-//    public void getStudentByEmailAddress() {
-//        Student student=studentRepository.getStudentByEmailAddress("mehedy@gmail.com");
-//
-//        System.out.println("Student "+student);
-//    }
-//
-//
-//    @Test
-//    public void getStudentFirstNameByEmailAddress(){
-//
-//        String firstName=studentRepository.getStudentFirstNameByEmailAddress("mehedy@gmail.com");
-//
-//        System.out.println("First Name is: "+firstName );
-//
-//    }
+    @Test
+    public void getStudentByEmailAddress() {
+        Student student=studentRepository.getStudentByEmailAddress("mehedy12@gmail.com");
+
+        System.out.println("Student "+student);
+    }
+
+
+    @Test
+    public void getStudentFirstNameByEmailAddress(){
+
+        String firstName=studentRepository.getStudentFirstNameByEmailAddress("mehedy12@gmail.com");
+
+        System.out.println("First Name is: "+firstName );
+
+    }
 
 
 /*

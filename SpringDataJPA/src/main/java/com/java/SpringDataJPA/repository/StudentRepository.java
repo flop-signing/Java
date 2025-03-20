@@ -29,15 +29,16 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     // Sometimes creating method name is not enough and at that time you have to specify different query as well
     // And based on that query i wanna get the data and for these particular case we use @Query annotation
 
+
     // These JPQL is created Based on the class name(here Student Class) not table on the DB
     @Query("select s from Student s where s.email = ?1")
     public Student getStudentByEmailAddress(String email);
 
-//
-//    // Get the first name of the student
-//
-//    @Query("select s.firstName from Student s where s.email = ?1")
-//    public String getStudentFirstNameByEmailAddress(String email);
+
+    // Get the first name of the student
+
+    @Query("select s.firstName from Student s where s.email = ?1")
+    public String getStudentFirstNameByEmailAddress(String email);
 
 
     // Suppose there is a very complex object and   that can't define through JPQL so on that case
