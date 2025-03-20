@@ -31,7 +31,7 @@ public class Teacher {
     private String lastName;
 
 
-    @OneToMany(
+/*    @OneToMany(
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
@@ -39,5 +39,5 @@ public class Teacher {
             name = "teacher_id",
             referencedColumnName = "teacherId"
     )
-    private List<Course> courseList;
+    private List<Course> courseList;*/
 }

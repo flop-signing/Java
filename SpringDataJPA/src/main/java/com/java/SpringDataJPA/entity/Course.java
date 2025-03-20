@@ -26,4 +26,14 @@ public class Course {
 
     @OneToOne(mappedBy = "course")
     private CourseMaterial courseMaterial;
+
+    @ManyToOne(
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(
+            name="teacherId",
+            referencedColumnName = "teacherId"
+    )
+    private Teacher teacher;
 }
